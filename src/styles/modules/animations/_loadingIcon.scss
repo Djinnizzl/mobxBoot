@@ -1,0 +1,56 @@
+$animDur: 0.6s;
+$delay: 0.1s;
+$borderStyle: 1px solid black;
+$loaderCol: rgba(#FFFFFF, 0.5);
+$minHeight: 20px;
+$maxHeight: 60px;
+$spaceBetween: 20px;
+
+.loadingIcon {
+
+	height: $maxHeight;
+	left: 50%;
+	position: absolute;
+	top: 50%;
+
+	&__bar {
+		animation: loading $animDur infinite alternate ease;
+		background-color: $loaderCol;
+		border: $borderStyle;
+		display: inline-block;
+		height: $minHeight;
+		left: 50%;
+		margin: 0 2px;
+		position: absolute;
+		top: 50%;
+		transform: translate3d(-50%, -50%, 0);
+		width: 15px;
+
+		&:nth-child(1) {
+			left: ($spaceBetween * -1);
+		}
+
+		&:nth-child(2) {
+			animation-delay: $delay;
+		}
+
+		&:nth-child(3) {
+			left: $spaceBetween;
+			animation-delay: ($delay * 2);
+		}
+	}
+}
+
+@keyframes loading {
+	0% {
+		height: $minHeight;
+	}
+
+	70% {
+		height: $maxHeight;
+	}
+
+	100% {
+		height: $maxHeight;
+	}
+}
