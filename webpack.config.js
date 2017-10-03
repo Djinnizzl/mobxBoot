@@ -3,7 +3,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CSSExtract = new ExtractTextPlugin('styles.css');
 
 module.exports = {
-	entry: './src/app.jsx',
+	entry: ['babel-polyfill', './src/app.jsx'],
 	output: {
 		path: path.join(__dirname, 'public'),
 		filename: 'bundle.js'
@@ -28,7 +28,8 @@ module.exports = {
 		]
 	},
 	devServer: {
-		contentBase: path.join(__dirname, 'public')
+		contentBase: path.join(__dirname, 'public'),
+		historyApiFallback: true
 	},
 	plugins: [
 		CSSExtract
