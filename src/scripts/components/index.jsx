@@ -6,7 +6,7 @@ import DevTools from 'mobx-react-devtools';
 import MainStore from '../stores/index.jsx';
 
 /* HELPER */
-import Loader from './helper/Loader.jsx'
+import Loader from './helper/Loader/Loader.jsx'
 
 /* COMPONENTS */
 

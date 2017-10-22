@@ -19,7 +19,13 @@ module.exports = {
 				test: /\.s?css$/,
 				use: CSSExtract.extract({
 					use: [
-						'css-loader',
+						{
+							loader: 'css-loader',
+							query: {
+								modules: true,
+								localIdentName: '[name]_[local]___[hash:base64:5]'
+							}
+						},
 						'autoprefixer-loader',
 						'sass-loader'
 					]
