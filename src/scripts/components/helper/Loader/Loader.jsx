@@ -11,5 +11,6 @@ export default ({ loadingFinishedWhen, children }) => loadingFinishedWhen ? (
 		<div className={styles.loadingIcon__bar}></div>
 		<div className={styles.loadingIcon__bar}></div>
 		<div className={styles.loadingIcon__bar}></div>
+		<div style={{clear:'both'}}></div>
 	</div>
 );

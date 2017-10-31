@@ -1,0 +1,84 @@
+$columns: 12;
+$gapX: 20px;
+$gapY: 10px;
+
+$colSmall: $small;
+$colMedium: $medium;
+$colLarge: $large;
+
+.grid {
+
+    min-width: 100%;
+    position: relative;
+    margin-right: -$gapX;
+    overflow: hidden;
+    
+    & > * {
+        float: left;
+        width: 100%;
+        padding-right: $gapX;
+        padding-bottom: $gapY;
+    }
+    
+    
+    
+    &--noGap {
+        
+        margin-right: 0;
+        
+        & > * {
+            padding-right: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+    
+    @for $i from 1 through $columns {
+        .col-S-#{$i} {
+            width: 100% / $columns * $i;
+        }
+    }
+    
+    @media (min-width: $colSmall) {
+        @for $i from 1 through $columns {
+            .col-M-#{$i} {
+                width: 100% / $columns * $i;
+            }
+        }
+    }
+    
+    @media (min-width: $colMedium) {
+        @for $i from 1 through $columns {
+            .col-L-#{$i} {
+                width: 100% / $columns * $i;
+            }
+        }
+    }
+
+    @for $i from 1 through $columns {
+        .col-offset-S-#{$i} {
+            margin-left: 100% / $columns * $i;
+        }
+    }
+    
+    @media (min-width: $colSmall) {
+        @for $i from 0 through $columns {
+            .col-offset-M-#{$i} {
+                margin-left: 100% / $columns * $i;
+            }
+        }
+    }
+    
+    @media (min-width: $colMedium) {
+        @for $i from 0 through $columns {
+            .col-offset-L-#{$i} {
+                margin-left: 100% / $columns * $i;
+            }
+        }
+    }
+}

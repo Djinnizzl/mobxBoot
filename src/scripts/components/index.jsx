@@ -23,7 +23,9 @@ class Main extends Component {
 			<Provider MainStore={MainStore}>
 				<div>
 					<DevTools />
-					<Loader loadingFinishedWhen={false} />
+					<div className="test">
+						<Loader loadingFinishedWhen={false} />
+					</div>
 				</div>
 			</Provider>
 		);

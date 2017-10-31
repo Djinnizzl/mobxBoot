@@ -1,0 +1,9 @@
+$maxMilliseconds: 10;
+
+.delay {
+    @for $i from 1 through $maxMilliseconds {
+        &-#{$i} {
+            animation-delay: $i * 0.1s;
+        }
+    }
+}
