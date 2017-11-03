@@ -1,4 +1,10 @@
 /* mediaqueries */
-$small: 781px;
-$medium: 1281px;
-$large: 1981px;
+$mediaQueryList: (
+    XS: 0px, 
+    SM: 482px,
+    MD: 760px,
+    LG: 1280px,
+    XL: 1920px
+);
+/* helper to grab width from map - example: width: mqWidth(MD) */
+@import './functions/mqWidth.scss';

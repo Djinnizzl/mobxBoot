@@ -23,7 +23,7 @@ module.exports = {
 							loader: 'css-loader',
 							query: {
 								modules: true,
-								localIdentName: '[name]_[local]___[hash:base64:5]'
+								localIdentName: '[path]__[name]__[local]___[hash:base64:5]'
 							}
 						},
 						'autoprefixer-loader',

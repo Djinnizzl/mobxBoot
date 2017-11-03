@@ -1,8 +1,29 @@
 /* clearfix */
 @mixin clearfix {
+
     &:after {
+        
         clear: both;
         content: '';
         display: table;
     }
 }
+
+/* creating mediaquery mixins example: atMQ(Small) { color:red; } atMQ(Medium) { color:blue; } */
+@mixin atMQ($mediaQueryName) {
+
+    @if map-has-key($mediaQueryList, $mediaQueryName) {
+
+        @media (min-width: #{map-get($mediaQueryList, $mediaQueryName)}) {
+
+            @content;
+        }
+    }
+
+    @else {
+        
+        @warn "Unfortunately, no value could be retrieved from `#{$mediaQueryName}`. "
+            + "Please make sure it is defined in `$breakpoints` map.";
+    }
+}
+

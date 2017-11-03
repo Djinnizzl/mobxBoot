@@ -1,0 +1,8 @@
+@function mqWidth($key) {
+    @if map-has-key($mediaQueryList, $key) {
+        @return map-get($mediaQueryList, $key);
+    }
+
+    @warn "Unknown `#{$key}` in $mediaQueryList.";
+    @return null;
+}
